@@ -37,101 +37,74 @@ func ParsePdf(c *gin.Context) {
 		"report_id": 1,
 		"parsed": gin.H{
 			"basic_info": gin.H{
-				"학번":          "2023105682",
-				"성명":          "홍길동",
-				"학과":          "컴퓨터공학부",
-				"학년":          "3",
-				"등록횟수":        "5",
-				"학적상태":        "재학",
-				"입학구분":        "신입학",
-				"외국인여부":       "N",
-				"최종변동":        "2023/03/01",
-				"최종판정":        "졸업유예",
-				"자료 생성 일시":    "2025/03/31 10:27:50",
-				"이수 과목 기준 일시": "2025/04/16 23:18:20",
-				"자료 출력 일시":    "2025/04/16 23:18:20",
+				"student_number":          "2023105682",
+				"student_name":          "홍길동",
+				"department":          "컴퓨터공학부",
+				"grade":          "3",
+				"enroll_semester":   "5",
+				"evaluation_date":    "2025/03/31 10:27:50",
 			},
 			"graduation_info": gin.H{
-				"수강학점": gin.H{
-					"취득": "78(96)",
-					"기준": "140",
-					"판정": false,
+				"credit": gin.H{
+					"total_credits_earned": "78(96)",
+					"total_credits_required": "140",
+					"validate": false,
 				},
-				"취득학점": gin.H{
-					"취득": "0",
-					"기준": "1",
-					"판정": false,
+				"grades": gin.H{
+					"earned":   "4.143",
+					"required": "1.7",
+					"validate": true,
 				},
-				"전공": gin.H{
-					"취득": "2",
-					"기준": "3",
-					"판정": false,
+				"english": gin.H{
+					"earned": "7",
+					"required": "3",
+					"validate": true,
 				},
-				"교양": gin.H{
-					"취득": "4.143",
-					"기준": "1.7",
-					"판정": true,
-				},
-				"졸업평점": gin.H{
-					"취득": "7",
-					"기준": "3",
-					"판정": true,
-				},
-				"영어강의": gin.H{
-					"취득": "0",
-					"기준": "1",
-					"판정": false,
-				},
-				"논문": gin.H{
-					"취득": "전산(기타)",
-					"기준": "해당없음",
-					"판정": true,
-				},
-				"TOPIK": gin.H{
-					"취득": "면제",
-					"기준": "외국어",
-					"판정": true,
+				"paper": gin.H{
+					"earned": "0",
+					"required": "1",
+					"validate": false,
 				},
 			},
 			"liberal_arts_info": []gin.H{
 				{
-					"이수 구분":     "배분이수교과(2019~2023)",
-					"영역(취득/기준)": "1/0",
-					"학점(취득/기준)": "6/12",
-					"판정":        false,
+					"category":     "배분이수교과(2019~2023)",
+					"required" : 12,
+					"earned" 6: 
+					"validate":        false,
 				},
 				{
-					"이수 구분":     "자유이수",
-					"영역(취득/기준)": "2/2",
-					"학점(취득/기준)": "10/3",
-					"판정":        true,
+					"category":     "자유이수",
+					"required" : 10,
+					"earned" 3: 
+					"validate":        false,
 				},
 				{
-					"이수 구분":     "필수교과",
-					"영역(취득/기준)": "3/3",
-					"학점(취득/기준)": "17/17",
-					"판정":        true,
+					"category":     "필수교과",
+					"required" : 17,
+					"earned" 17: 
+					"validate":        true,
 				},
 			},
 			"major_info": gin.H{
-				"심화전공": "컴퓨터공학과",
-				"기준연도": 2023,
-				"전공기초": gin.H{
-					"취득": 15,
-					"기준": 18,
+				"advanced_major": "컴퓨터공학과",
+				"reference_year": 2023,
+				"major_basic": gin.H{
+					"earned": 15,
+					"required": 18,
 				},
 				"전필": gin.H{
-					"취득": 36,
-					"기준": 45,
+					"earned": 36,
+					"required": 45,
 				},
-				"필수+선택": gin.H{
-					"취득": 51,
-					"기준": 75,
+				"required_plus_elective": gin.H{
+					"earned": 51,
+					"required": 75,
 				},
-				"판정": false,
-				"산학 필수": gin.H{
-					"수강학점": 3,
-					"기준학점": 12,
+				"passed": false,
+				"industry_required": gin.H{
+					"earned": 3,
+					"required": 12,
 				},
 			},
 		},
