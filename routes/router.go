@@ -14,8 +14,8 @@ func RegisterRoutes(r *gin.Engine) {
 
 	parser := r.Group("/report")
 	{
-		parser.POST("/graduation-report/validate", handler.IsValidPdf)
-		parser.POST("/graduation-report", handler.ParsePdf)
+		parser.POST("/report/validate", handler.IsValidPdf)
+		parser.POST("/report", handler.ParsePdf)
 	}
 	course := r.Group("course")
 	{
