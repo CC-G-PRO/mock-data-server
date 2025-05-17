@@ -103,7 +103,10 @@ func GetCart(c *gin.Context) {
 			"priority":    item["priority"],
 		})
 	}
-	c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, gin.H{
+		"message": "조회 성공",
+		"data":    response,
+	})
 }
 
 // GET /timetables
@@ -122,7 +125,7 @@ func GenerateTimetables(c *gin.Context) {
 // POST /timetables/filter
 func FilterTimetables(c *gin.Context) {
 	var body struct {
-		Options map[string]interface{} `json:"options"`
+		Options []string `json:"option"`
 	}
 	if err := c.BindJSON(&body); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"msg": "Invalid filter request"})
