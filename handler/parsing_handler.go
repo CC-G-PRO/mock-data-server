@@ -92,16 +92,16 @@ func ParsePdf(c *gin.Context) {
 					"earned":   15,
 					"required": 18,
 				},
-				"major_": gin.H{
+				"major_required": gin.H{
 					"earned":   36,
 					"required": 45,
 				},
-				"required_plus_elective": gin.H{
+				"major_required_plus_elective": gin.H{
 					"earned":   51,
 					"required": 75,
 				},
 				"passed": false,
-				"industry_required": gin.H{
+				"major_industry_required": gin.H{
 					"earned":   3,
 					"required": 12,
 				},
