@@ -44,7 +44,7 @@ func ParsePdf(c *gin.Context) {
 				"evaluation_date": "2025/03/31 10:27:50",
 			},
 			"graduation_info": gin.H{
-				"grades": gin.H{
+				"credit": gin.H{
 					"total_credits_earned":   "78(96)",
 					"total_credits_required": "140",
 					"valid":                  false,
